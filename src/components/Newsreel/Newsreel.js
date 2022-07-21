@@ -1,30 +1,31 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect, useCallback} from 'react'
+import { Link } from 'react-router-dom';
 import { NewsReelContext } from '../../context/NewsReelContext';
 import styles from './Newsreel.module.css';
 
 const Newsreel = () => {
-    const { articles } = useContext(NewsReelContext);
-    
+    const { newsArticles } = useContext(NewsReelContext);
+   
+        //  const sortDate =  [...newsArticles].sort((a,b) => {
+        //      return new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf() 
+        //  })
+        //      console.log(sortDate);
+         
+             
   return (
-    <div className = {styles.newsReelContainer}>
-        <label for="sortby">Sort: </label>
-        <select name="sortby" id="sortby" form="sortby">
-            <option value="Newest">Date</option>
-            <option value="Alphebetically">Alphebetically</option>
-        </select>
-     {
-        articles.map(article => (
-            <div className = {styles.card} key = {article.index}>
-                {/* <img src = {article.image_url} alt = '' ></img> */}
-                <section className = {styles.descriptors}>
-                 <a href = {article.link} target = '_blank' className = {styles.header}>{article.title} </a> 
-                <p> {article.description}</p>
-                </section>
-            </div>
-        ))
-     }
-    </div>
+    <div>
+    { 
+        newsArticles.map(article => (
+        <div key = {article.index}>
+        <a href = {article.url} target = '_blank' >{article.title} </a> 
+        <img src = {article.urlToImage} alt = 'articlethumbnail'></img>
+        <p>{article.source.name}</p>
+       <p> {article.description}</p>
+   </div>
+      ))}
+      </div>
   )
-}
+  
 
+    }
 export default Newsreel

@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { NewsReelContext } from './context/NewsReelContext';
+import Nav from './components/Nav/Nav';
 import Newsreel from './components/Newsreel/Newsreel';
+import Search from './components/Search/Search';
+import Alphaorder from './components/AlphaOrder/Alphaorder'
 const axios = require('axios');
 
 
 function App() {
 
-  const [articles, setArticles] = useState([]);
-  
-  const apiKey = 'pub_9414d2d02ad737ddbd066187613b2fdeefa2';
+  const [newsArticles, setArticles] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
   const getArticles = () => {
-    axios.get(`https://newsdata.io/api/1/news?apikey=pub_9414d2d02ad737ddbd066187613b2fdeefa2`)
-    .then(response => setArticles(response.data.results));
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
+    .then(response => setArticles(response.data.articles));
   }
 
   useEffect(() => {
@@ -21,11 +24,19 @@ function App() {
 
 
   return (
-    <div>
-    <NewsReelContext.Provider value = {{articles}}>
-    <Newsreel />
-    </NewsReelContext.Provider>
-    </div>
+    
+      <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput}}>
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path = '/'  element = {<Newsreel />} />
+            <Route path = '/alphasort'  element = {<Alphaorder />} />
+            <Route path = '/search'  element = {<Search />} />
+        </Routes>
+      </Router>
+      
+      </NewsReelContext.Provider>
+    
   );
 }
 
