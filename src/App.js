@@ -13,11 +13,25 @@ function App() {
   const [newsArticles, setArticles] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
+  const [pageNum, setPageNum] = useState(0);
+  const perPage = 15;
+  const whatPage = pageNum * perPage 
+
+  const displayArticles = (arr) =>  arr.slice(whatPage, whatPage + perPage)
+  .map(item => (
+      <div key = {item.index}>
+      <a href = {item.url} target = '_blank' >{item.title} </a> 
+      <img src = {item.urlToImage} alt = 'articlethumbnail'></img>
+      <p>{item.source.name}</p>
+     <p> {item.description}</p>
+ </div>
+ 
+  ))
+
   const getArticles = () => {
     axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
     .then(response => setArticles(response.data.articles));
   }
-
   useEffect(() => {
     getArticles();
   }, []);
@@ -25,7 +39,7 @@ function App() {
 
   return (
     
-      <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput}}>
+      <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput, displayArticles, whatPage, perPage, pageNum}}>
         <Router>
           <Nav />
           <Routes>

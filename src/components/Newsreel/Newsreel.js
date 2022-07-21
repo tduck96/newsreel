@@ -4,17 +4,14 @@ import { NewsReelContext } from '../../context/NewsReelContext';
 import styles from './Newsreel.module.css';
 
 const Newsreel = () => {
-    const { newsArticles } = useContext(NewsReelContext);
-   
-        //  const sortDate =  [...newsArticles].sort((a,b) => {
-        //      return new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf() 
-        //  })
-        //      console.log(sortDate);
-         
+    const { newsArticles, displayArticles } = useContext(NewsReelContext);
+ 
+    const gettheNews = displayArticles(newsArticles)     
              
   return (
     <div>
-    { 
+        {gettheNews}
+    {/* { 
         newsArticles.map(article => (
         <div key = {article.index}>
         <a href = {article.url} target = '_blank' >{article.title} </a> 
@@ -22,7 +19,7 @@ const Newsreel = () => {
         <p>{article.source.name}</p>
        <p> {article.description}</p>
    </div>
-      ))}
+      ))} */}
       </div>
   )
   
