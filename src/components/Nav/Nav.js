@@ -1,18 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import { NewsReelContext } from '../../context/NewsReelContext';
 import styles from './Nav.module.css'
 
 
 const Nav = () => {
-    const { setSearchInput, setArrayToFilter, searchInput, newsArticles } = useContext(NewsReelContext);
-    
-    const submitSearch = (e) => {
-        
-      
-           
 
-    }
   return (
     <section className = {styles.container}>
     <section className = {styles.sortbox}>
