@@ -1,26 +1,25 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useEffect } from 'react'
+import { useContext, useState } from 'react'
 import { NewsReelContext } from '../../context/NewsReelContext'
+import search from './assets/search.png'
+import styles from './Search.module.css'
 
 const Search = () => {
-    const { searchInput, newsArticles } = useContext(NewsReelContext);
-    
-    const filteredSearch = newsArticles.filter(item => item.title.includes(searchInput))
+    const { searchInput, newsArticles, setSearchInput, displayArticles } = useContext(NewsReelContext);
+
+      const filteredSearch = newsArticles.filter(item => item.title.toLowerCase().includes(searchInput.toLowerCase()))
+    console.log(filteredSearch);
+
+    const searchResults = displayArticles(filteredSearch)
     
   return (
     <div>
-      { 
-      filteredSearch.map(item => (
-        <div key = {item.index}>
-
-            <a href = {item.url} target = '_blank' >{item.title} </a> 
-            <img src = {item.urlToImage} alt = 'articlethumbnail'></img>
-            <p>{item.source.name}</p>
-            <p> {item.description}</p>
-
-        </div>
-      ))}
-
+      <div className = {styles.searchContainer}>
+      <input type = 'search' className = {styles.input} onChange={(e) => setSearchInput(e.target.value) }></input>
+      <img src = {search} className ={styles.searchicon}></img>
+    </div>
+      {searchResults}
+     
     </div>
   )
 }

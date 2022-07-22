@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { NewsReelContext } from '../../context/NewsReelContext';
+import ReactPaginate from 'react-paginate';
 
 
 const Alphaorder = () => {
@@ -14,6 +15,7 @@ const Alphaorder = () => {
   return (
     <div>
       {gettheNews}
+      <ReactPaginate />
     </div>
   )
 }

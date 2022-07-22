@@ -1,0 +1,29 @@
+html {
+    background-color: rgb(240, 240, 240);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: .05px solid rgb(186, 186, 186);
+    margin-top: 1rem;
+}
+.container:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+.poster {
+    width: 100%;
+    border-radius: .2rem;
+}
+
+.source {
+    color: gray;
+}
+
+.header > a {
+    text-decoration: none;
+    color: rgb(40, 40, 40);
+    font-size: 1.5rem;
+}
