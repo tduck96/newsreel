@@ -19,32 +19,36 @@ function App() {
   const perPage = 15;
   const whatPage = pageNum * perPage 
 
+  const getArticles = () => {
+  axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
+  .then(response => setArticles(response.data.articles));
+  }
+
+  useEffect(() => {
+    getArticles();
+    }, []);
+
   const displayArticles = (arr) => 
    arr.slice(whatPage, whatPage + perPage)
-  .map(item => (
+    .map(item => (
       <div key = {item.index} className = 'container'>
-        <img src = {item.urlToImage} alt = 'articlethumbnail' className = 'poster'></img>
-        <p className = 'source'>{item.source.name}</p>
-      <p className='header'><a href = {item.url} target = '_blank' >{item.title} </a></p> 
-     
-      
-     <p> {item.description}</p>
- </div>
+          <img src = {item.urlToImage} alt = 'articlethumbnail' className = 'poster'></img>
+          <p className = 'source'>{item.source.name}</p>
+          <p className='header'><a href = {item.url} target = '_blank' >{item.title} </a></p> 
+          <p className = 'description'> {item.description}</p>
+      </div>
  
   ))
 
-  const getArticles = () => {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
-    .then(response => setArticles(response.data.articles));
+  const paginateBetweenPages = ({selected}) => {
+    setPageNum(selected);
+    document.body.scrollIntoView();
+    console.log('clicked');
   }
-  useEffect(() => {
-    getArticles();
-  }, []);
-
 
   return (
     
-      <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput, displayArticles, whatPage, perPage, pageNum, arrayToFilterForSearch, setArrayToFilter}}>
+      <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput, displayArticles, whatPage, perPage, pageNum, setPageNum, arrayToFilterForSearch, setArrayToFilter, paginateBetweenPages}}>
         <Router>
           <Nav />
           <Routes>

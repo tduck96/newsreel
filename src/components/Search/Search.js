@@ -13,13 +13,19 @@ const Search = () => {
     const searchResults = displayArticles(filteredSearch)
     
   return (
-    <div>
+    
+      <div>
       <div className = {styles.searchContainer}>
+        <div className = {styles.inputContainer}>
+        <img src = {search} className ={styles.searchicon}></img>
       <input type = 'search' className = {styles.input} onChange={(e) => setSearchInput(e.target.value) }></input>
-      <img src = {search} className ={styles.searchicon}></img>
+      
+       </div>
     </div>
+
+      <div className = {styles.reelContainer}>
       {searchResults}
-     
+      </div>
     </div>
   )
 }

@@ -5,18 +5,26 @@ import styles from './Newsreel.module.css';
 import ReactPaginate from 'react-paginate';
 
 const Newsreel = () => {
-    const { newsArticles, displayArticles, pageNum, whatPage } = useContext(NewsReelContext);
+    const { newsArticles, displayArticles, paginateBetweenPages} = useContext(NewsReelContext);
  
-    const gettheNews = displayArticles(newsArticles)     
-             
+    const gettheNews = displayArticles(newsArticles)
+
+  
   return (
-    <div>
+    <div className = {styles.container}>
+      <section className = {styles.reelContainer}>
         {gettheNews}
-        <ReactPaginate
+      </section>
+       
+          <ReactPaginate
             previousLabel={"<"}
             nextLabel={">"}
-            pageCount = {whatPage}
+            pageCount = {2}
+            onPageChange={paginateBetweenPages}
+            containerClassName={styles.paginationContainer}
+            activeClassName={styles.activePage}
             />
+           
       </div>
   )
   

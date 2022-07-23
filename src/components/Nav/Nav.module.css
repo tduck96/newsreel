@@ -7,6 +7,11 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.brandHeader {
+   height: 40px;
+   width: 40%;
+   margin-bottom: .5rem;
+}
 .sortbox {
     display: flex; 
     justify-content: space-between;
@@ -28,4 +33,15 @@
 }
 .links:hover {
     background-color: rgb(151, 151, 151);
+}
+.links:active {
+    background-color: rgb(151, 151, 151)
+}
+
+@media screen and (min-width: 900px) {
+    .brandHeader {
+    
+    margin-bottom: 1rem;
+    width: 30%;
+    }
 }
