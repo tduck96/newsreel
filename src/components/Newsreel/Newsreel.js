@@ -5,11 +5,10 @@ import styles from './Newsreel.module.css';
 import ReactPaginate from 'react-paginate';
 
 const Newsreel = () => {
+  
     const { newsArticles, displayArticles, paginateBetweenPages} = useContext(NewsReelContext);
- 
     const gettheNews = displayArticles(newsArticles)
 
-  
   return (
     <div className = {styles.container}>
       <section className = {styles.reelContainer}>
