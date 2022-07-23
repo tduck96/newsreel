@@ -4,7 +4,7 @@ Responsive single-page web application built with react. Mobile-first design. Us
 
 Articles pulled from public API at https://newsapi.org/
 
-State managed by React Context API/useContext hook.
+State managed with React Context API/useContext hook.
 
 Articles are paginated 15 at a time, the feature is built with the use of the React-Paginate dependency.
 

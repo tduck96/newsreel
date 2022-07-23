@@ -34,13 +34,8 @@
 .links:hover {
     background-color: rgb(151, 151, 151);
 }
-.links:active {
-    background-color: rgb(151, 151, 151)
-}
-
 @media screen and (min-width: 900px) {
     .brandHeader {
-    
     margin-bottom: 1rem;
     width: 30%;
     }

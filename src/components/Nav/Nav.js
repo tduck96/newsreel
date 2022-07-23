@@ -10,9 +10,11 @@ const Nav = () => {
     <section className = {styles.container}>
       <img src = {brandHeader} alt = 'header' className = {styles.brandHeader}></img>
     <section className = {styles.sortbox}>
+
        <Link to ='/' className = {styles.links}>Breaking News</Link>
        <Link to ='/alphasort' className = {styles.links}> News A-Z</Link>
        <Link to ='/search' className={styles.links}>Search</Link>
+       
        </section>
         </section>
   )

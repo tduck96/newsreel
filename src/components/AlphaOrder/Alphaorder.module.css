@@ -19,7 +19,6 @@
 .paginationContainer a:hover {
     background-color: rgb(151, 151, 151);
     cursor: pointer;
-
 }
 .paginationContainer li {
    margin-top: .5rem; 
@@ -27,7 +26,6 @@
 .activePage a {
     background-color: rgb(172, 172, 172); 
 }
-
 @media screen and (min-width: 750px){
     .reelContainer {
         display: grid;

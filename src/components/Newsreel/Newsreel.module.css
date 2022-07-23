@@ -24,7 +24,6 @@ img {
 .header {
     font-size: 1.5rem;
 }
-
 .paginationContainer {
     box-sizing: border-box;
     justify-content: center;
@@ -56,12 +55,12 @@ img {
 }
 
 @media screen and (min-width: 750px){
-    .reelContainer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+ .reelContainer {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
     }
-    .pagination {
-        display: flex;
-        justify-content: center;
+ .pagination {
+     display: flex;
+     justify-content: center;
     }
 }

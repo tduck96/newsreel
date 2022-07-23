@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NewsReelContext } from './context/NewsReelContext';
 import './App.css';
 import Nav from './components/Nav/Nav';
@@ -20,8 +20,8 @@ function App() {
   const whatPage = pageNum * perPage 
 
   const getArticles = () => {
-  axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
-  .then(response => setArticles(response.data.articles));
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=cecc1278a6874a75bc15ccd18bc30545`)
+    .then(response => setArticles(response.data.articles));
   }
 
   useEffect(() => {
@@ -29,16 +29,15 @@ function App() {
     }, []);
 
   const displayArticles = (arr) => 
-   arr.slice(whatPage, whatPage + perPage)
-    .map(item => (
-      <div key = {item.index} className = 'container'>
-          <img src = {item.urlToImage} alt = 'articlethumbnail' className = 'poster'></img>
-          <p className = 'source'>{item.source.name}</p>
-          <p className='header'><a href = {item.url} target = '_blank' >{item.title} </a></p> 
-          <p className = 'description'> {item.description}</p>
-      </div>
- 
-  ))
+    arr.slice(whatPage, whatPage + perPage)
+       .map(item => (
+          <div key = {item.index} className = 'container'>
+            <img src = {item.urlToImage} alt = 'articlethumbnail' className = 'poster'></img>
+            <p className = 'source'>{item.source.name}</p>
+            <p className='header'><a href = {item.url} target = '_blank' >{item.title} </a></p> 
+            <p className = 'description'> {item.description}</p>
+         </div>
+          ))
 
   const paginateBetweenPages = ({selected}) => {
     setPageNum(selected);
@@ -47,7 +46,6 @@ function App() {
   }
 
   return (
-    
       <NewsReelContext.Provider value = {{newsArticles, searchInput, setSearchInput, displayArticles, whatPage, perPage, pageNum, setPageNum, arrayToFilterForSearch, setArrayToFilter, paginateBetweenPages}}>
         <Router>
           <Nav />
@@ -55,9 +53,8 @@ function App() {
             <Route path = '/'  element = {<Newsreel />} />
             <Route path = '/alphasort'  element = {<Alphaorder />} />
             <Route path = '/search'  element = {<Search />} />
-        </Routes>
-      </Router>
-      
+         </Routes>
+        </Router>
       </NewsReelContext.Provider>
     
   );

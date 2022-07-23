@@ -17,16 +17,16 @@ const Alphaorder = () => {
   return (
     <div className = {styles.container}>
       <section className = {styles.reelContainer}>
-      {gettheNews}
+        {gettheNews}
       </section>
-      <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
-        pageCount = {2}
-        onPageChange={paginateBetweenPages}
-        containerClassName={styles.paginationContainer}
-        activeClassName={styles.activePage}
-        />
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount = {2}
+          onPageChange={paginateBetweenPages}
+          containerClassName={styles.paginationContainer}
+          activeClassName={styles.activePage}
+          />
       </div>
   )
 }
