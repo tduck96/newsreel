@@ -10,7 +10,7 @@ Articles are paginated 15 at a time, the feature is built with the use of the Re
 
 TO RUN ON YOUR DEVICE: 
 
-Clone repository, once in the directory, run NPM start. (or if you prefer Yarn YARN START).
+Clone repository, navigate to directory from terminal. Once in directory, run script NPM start in terminal shell (or if you prefer Yarn YARN START).
 
 DEPENDENCIES: 
 

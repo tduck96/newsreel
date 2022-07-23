@@ -42,7 +42,6 @@ function App() {
   const paginateBetweenPages = ({selected}) => {
     setPageNum(selected);
     document.body.scrollIntoView();
-    console.log('clicked');
   }
 
   return (
