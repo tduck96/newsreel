@@ -7,7 +7,7 @@ State managed with React Context API/useContext hook.
 
 Articles are paginated 15 at a time, the feature is built with the use of the React-Paginate dependency.
 
-TO RUN ON YOUR DEVICE:
+## TO RUN ON YOUR DEVICE ## 
 
 Clone repository => navigate to directory from terminal => run script NPM start in terminal shell (or if you prefer Yarn YARN START).
 
