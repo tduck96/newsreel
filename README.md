@@ -11,7 +11,7 @@ Responsive single-page web application built with react. Mobile-first design. Us
 
 Clone repository => navigate to directory from terminal => run script NPM start in terminal shell (or if you prefer Yarn YARN START).
 
-I tried to deploy this on Vercel. I kept recieving a 426 error. Digging through StackOverFlow I discovered that the NewsApi.org free tier does not allow for requests from the browser.
+<sub> I tried to deploy this on Vercel. I kept recieving a 426 error. Digging through StackOverFlow I discovered that the NewsApi.org free tier does not allow for requests from the browser. </sub>
 
  ### DEPENDENCIES: ###
 
