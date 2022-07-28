@@ -1,11 +1,11 @@
 # Bleiweiss Newsreel #
 Responsive single-page web application built with react. Mobile-first design. User can sort through articles both by posted date (breaking news) and alphabetically (a-z) 
 
-Articles pulled from public API at https://newsapi.org/
+<sub> Articles pulled from public API at https://newsapi.org/ </sub>
 
-State managed with React Context API/useContext hook.
+<sub> State managed with React Context API/useContext hook. </sub>
 
-Articles are paginated 15 at a time, the feature is built with the use of the React-Paginate dependency.
+<sub> Articles are paginated 15 at a time, the feature is built with the use of the React-Paginate dependency. </sub>
 
 ## TO RUN ON YOUR DEVICE ## 
 
