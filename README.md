@@ -1,6 +1,5 @@
-**Bleiweiss Newsreel**
-
-<sub>Responsive single-page web application built with react. Mobile-first design. User can sort through articles both by posted date (breaking news) and alphabetically (a-z) </sub>
+# Bleiweiss Newsreel #
+Responsive single-page web application built with react. Mobile-first design. User can sort through articles both by posted date (breaking news) and alphabetically (a-z) 
 
 Articles pulled from public API at https://newsapi.org/
 
