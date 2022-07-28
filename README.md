@@ -15,7 +15,7 @@ I tried to deploy this on Vercel. I kept recieving a 426 error. Digging through 
 
  ### DEPENDENCIES: ###
 
--Axios
--React-Paginate
--React-Router-Dom
+- Axios
+- React-Paginate
+- React-Router-Dom
 
