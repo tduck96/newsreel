@@ -13,7 +13,7 @@ Clone repository => navigate to directory from terminal => run script NPM start 
 
 I tried to deploy this on Vercel. I kept recieving a 426 error. Digging through StackOverFlow I discovered that the NewsApi.org free tier does not allow for requests from the browser.
 
- # DEPENDENCIES: #
+ ### DEPENDENCIES: ###
 
 -Axios
 -React-Paginate
