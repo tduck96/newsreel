@@ -1,4 +1,4 @@
-# Bleiweiss Newsreel #
+# Duck's Newsreel #
 Responsive single-page web application built with react. Mobile-first design. User can sort through articles both by posted date (breaking news) and alphabetically (a-z) 
 
 <sub> Articles pulled from public API at https://newsapi.org/ </sub>
